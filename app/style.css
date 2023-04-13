@@ -61,14 +61,13 @@
 }
 
 .navbar .nav-item a {
-  transition-duration: 200ms;
+  transition-duration: 100ms;
   font-size: 1.75rem;
   padding: .6rem;
 }
 
-.navbar .nav-item .active,
-.navbar .nav-item a:hover{
-  background-color: var(--call-clr);
+.navbar .nav-item .active{
+  background-image: linear-gradient(45deg, var(--call-clr), #2196f3);
   color: var(--main-white-clr);
 }
 
