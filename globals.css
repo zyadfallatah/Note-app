@@ -7,8 +7,20 @@
   text-decoration: none;
 }
 
+:root {
+  /* CSS HEX */
+  --main-clr: #272838ff;
+  --secondory-clr: #e1b07eff;
+  --help: #9ba7c0ff;
+  --wait: #197278ff;
+--celadon: #94e8b4ff;
+
+/* CSS HSL */
+}
+
 body {
   min-height: 100vh;
+  background-color: #fcfcfc;
 }
 
 img {
@@ -18,5 +30,5 @@ img {
 
 a {
   font-family: 'Roboto', sans-serif;
-  color: #333;
+  color: var(--main-clr);
 }

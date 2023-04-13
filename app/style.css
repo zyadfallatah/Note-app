@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  border-right: 2px solid black;
+  border-right: 2px solid var(--secondory-clr);
   padding: 3rem 2rem;
 }
 
@@ -46,7 +46,7 @@
   width: 100%;
   padding: 1.5rem 2rem;
 
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--secondory-clr);
 }
 
 .navbar .nav-items {
