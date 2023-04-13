@@ -1,0 +1,22 @@
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img {
+  border-radius: 50%;
+  max-width: 100px;
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
