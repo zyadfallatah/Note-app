@@ -32,6 +32,27 @@
   text-transform: capitalize;
 }
 
+.sidebar-nav .home {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+
+  font-size: 1.6rem;
+
+}
+
+.sidebar-nav .home a { 
+  padding: .4rem;
+  color: var(--main-white-clr);
+  transition: 200ms ease-in-out;
+}
+
+.sidebar-nav .home a:hover {
+  padding: .4rem;
+  background-color: var(--call-clr);
+}
+
 .right-layout {
   display: flex;
   flex-direction: column;
@@ -80,6 +101,7 @@
 .navbar .nav-item a:hover {
   color: var(--main-white-clr);
   background-color: var(--call-clr);
+  filter: brightness(1.1);
 }
 
 

@@ -4,6 +4,8 @@ links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
 
+    if (e.currentTarget.classList.value == "active") return;
+
     document.body.classList.add("fade-out");
 
     setTimeout(() => {
