@@ -52,12 +52,24 @@
 .navbar .nav-items {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.2rem;
 
   text-transform: capitalize;
   font-size: 1.5rem;
   text-align: center;
   flex: 1;
+}
+
+.navbar .nav-item a {
+  transition-duration: 200ms;
+  font-size: 1.75rem;
+  padding: .6rem;
+}
+
+.navbar .nav-item .active,
+.navbar .nav-item a:hover{
+  background-color: var(--call-clr);
+  color: var(--main-white-clr);
 }
 
 .dark-light-mode {
@@ -70,6 +82,13 @@
   background-color: #f0f0f0;
   padding: 1.4rem;
   border-radius: 50%;
+
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.dark-light-mode:hover {
+  filter: invert(.8);
 }
 
 .dark-light-mode i {

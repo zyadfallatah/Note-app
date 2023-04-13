@@ -2,6 +2,7 @@
   margin : 0;
   padding : 0;
   box-sizing: border-box;
+  outline: 0;
   font-family: 'Roboto', sans-serif;
   list-style: none;
   text-decoration: none;
@@ -11,11 +12,8 @@
   /* CSS HEX */
   --main-clr: #272838ff;
   --secondory-clr: #e1b07eff;
-  --help: #9ba7c0ff;
-  --wait: #197278ff;
---celadon: #94e8b4ff;
-
-/* CSS HSL */
+  --main-white-clr: #fafafa;
+  --call-clr: #197278ff;
 }
 
 body {
