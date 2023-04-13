@@ -19,9 +19,16 @@
 body {
   min-height: 100vh;
   background-color: #fcfcfc;
+
+  transition: 300ms;
+}
+
+.fade-out {
+  opacity: 0;
 }
 
 img {
+  border: 2px solid white;
   border-radius: 50%;
   max-width: 100px;
 }
