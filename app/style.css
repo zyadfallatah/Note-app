@@ -1,3 +1,7 @@
+body {
+  overflow-y: hidden;
+}
+
 .left-layout {
   display: flex;
 }
@@ -6,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   border-right: 2px solid var(--secondory-clr);
   padding: 3rem 2rem;
 
@@ -133,12 +137,18 @@
   font-size: 1.9rem;
 }
 
+
+/* Temp Test */
 .right-layout main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-content: flex-start;
   font-size: 5rem;
   flex: 1;
 
   width: 100%;
+
+  gap: 4rem;
+  padding: 2rem;
+
 }
