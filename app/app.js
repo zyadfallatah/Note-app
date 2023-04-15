@@ -1,4 +1,5 @@
-import baseNote from "/components/baseNote/baseNote.js";
+import BaseNote from "/components/baseNote/baseNote.js";
 
-for (let i = 0; i < 1; i++)
-  document.querySelector("main").innerHTML += baseNote;
+let myNote = new BaseNote("first note", "today works", "15/4/2023");
+
+document.querySelector("main").innerHTML = myNote.createBaseNote();
