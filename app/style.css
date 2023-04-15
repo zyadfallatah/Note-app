@@ -1,5 +1,5 @@
 body {
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .left-layout {
@@ -153,7 +153,10 @@ body {
 
 .right-layout main {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-size: 5rem;
   flex: 1;
 }
+
+

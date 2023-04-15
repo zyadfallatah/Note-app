@@ -22,7 +22,7 @@
   color: var(--main-clr);
 }
 
-.note-info {
+.base-note .note-info {
   position: relative;
 
   display: flex;
@@ -30,7 +30,7 @@
   min-height: 5rem;
 }
 
-.note-info::before {
+.base-note .note-info::before {
   content: "";
   position: absolute;
 
@@ -42,7 +42,7 @@
 
 }
 
-.note-info > * {
+.base-note .note-info > * {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@
   text-align: center;
 }
 
-.note-info .note-name {
+.base-note .note-info .note-name {
   font-size: 1.5rem;
 
   color: var(--main-white-clr);
@@ -61,7 +61,7 @@
   border-right: 1px solid var(--main-clr);
 }
 
-.note-info .date {
+.base-note .note-info .date {
   color: var(--main-white-clr);
   background-color: var(--main-clr);
 }
