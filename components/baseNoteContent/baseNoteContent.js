@@ -1,17 +1,50 @@
-let temp = `
-<div class="base-note-content">
-  <nav class="note-info">
+import BaseNote from "/components/baseNote/baseNote.js";
 
-    <h2 class="note-name">Note name</h2>
+class BaseNoteContent extends BaseNote {
+  constructor(noteName, subTitle, date, noteContent) {
+    super(noteName, subTitle, date);
+    this.noteContent = noteContent;
+  }
 
-    <div class="sub-info">
-      <h3 class="sub-title">Sub Title</h3>
-      <p class="date">1/1/1990</p>
-    </div>
+  createBaseNoteContent = function () {
+    let subTitle = document.createElement("h3");
+    subTitle.className = "sub-title";
+    let subTitleText = document.createTextNode(this.subTitle);
+    subTitle.append(subTitleText);
 
-  </nav>
-  <p class="note-content">Note content</p>
-</div>
-`;
+    let date = document.createElement("p");
+    date.className = "date";
 
-export default temp;
+    let dateText = document.createTextNode(this.date);
+    date.append(dateText);
+
+    let subInfo = document.createElement("div");
+    subInfo.className = "sub-info";
+    subInfo.appendChild(subTitle);
+    subInfo.appendChild(date);
+
+    let noteName = document.createElement("h2");
+    noteName.className = "note-name";
+    let noteNameText = document.createTextNode(this.noteName);
+    noteName.append(noteNameText);
+
+    let noteInfo = document.createElement("nav");
+    noteInfo.className = "note-info";
+    noteInfo.append(noteName);
+    noteInfo.append(subInfo);
+
+    let noteContent = document.createElement("p");
+    noteContent.className = "note-content";
+    let noteContentText = document.createTextNode(this.noteContent);
+    noteContent.append(noteContentText);
+
+    let baseNoteContent = document.createElement("div");
+    baseNoteContent.className = "base-note-content";
+    baseNoteContent.append(noteInfo);
+    baseNoteContent.append(noteContent);
+
+    return baseNoteContent;
+  };
+}
+
+export default BaseNoteContent;

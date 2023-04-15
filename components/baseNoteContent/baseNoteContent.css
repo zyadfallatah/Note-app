@@ -1,13 +1,17 @@
 .base-note-content {
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   top: 10%;
 
-  transform: translateX(-50%);
+  transform: translateX(-200%);
   width: 75%;
   height: 80%;
+
+  transition: 500ms;
+
 }
 
 .base-note-content .note-info {
@@ -42,11 +46,15 @@
 }
 
 .base-note-content .note-content {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  padding: 2rem 1rem;
   flex: 1;
 
   width: 100%;
   border: 1px solid var(--main-clr);
+
+  font-size: 3rem;
+  background-color: #83C5BE;
 }
