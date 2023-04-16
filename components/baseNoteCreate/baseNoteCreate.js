@@ -27,7 +27,7 @@ class BaseNoteCreation {
     return container;
   };
 
-  static createBaseNoteCreationPage = function () {
+  createBaseNoteCreationPage = function () {
     let cancel = document.createElement("input");
     cancel.id = "cancel";
     cancel.type = "button";
@@ -67,7 +67,7 @@ class BaseNoteCreation {
         "Note Name",
         "read-note-name",
         "note-name-limit",
-        "1"
+        "15"
       )
     );
 
@@ -76,7 +76,7 @@ class BaseNoteCreation {
         "Sub Title",
         "read-sub-title",
         "sub-title-limit",
-        "1"
+        "25"
       )
     );
 
@@ -106,6 +106,14 @@ class BaseNoteCreation {
 
     return createBaseNote;
   };
+
+  show = function () {
+    document.querySelector(".create-base-note").style.transform = "scale(1)";
+  };
+  // cancelCreation = function () {
+  //   let cancel = document.querySelector("#cancel");
+
+  // };
 }
 
 export default BaseNoteCreation;

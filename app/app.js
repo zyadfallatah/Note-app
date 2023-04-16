@@ -1,6 +1,7 @@
 import BaseNoteContent from "../components/baseNoteContent/baseNoteContent.js";
 import BaseNoteCreation from "../components/baseNoteCreate/baseNoteCreate.js";
 
+let createNote = new BaseNoteCreation();
 let myNote = new BaseNoteContent(
   "first helloaaa9",
   "today works",
@@ -8,11 +9,14 @@ let myNote = new BaseNoteContent(
   "Hi every one this is my first note"
 );
 
-document.body.append(BaseNoteCreation.createBaseNoteCreationPage());
-
 let addNewNotes = document.querySelector(".add-notes");
 addNewNotes.addEventListener("click", () => {
   addNewNotes.children[0].classList.toggle("active");
+
+  document.body.append(createNote.createBaseNoteCreationPage());
+  setTimeout(() => {
+    createNote.show();
+  }, 1);
 });
 
 // let main = document.querySelector("main");
