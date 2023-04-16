@@ -7,7 +7,7 @@ class BaseNote {
 
   createBaseNote = function () {
     return `
-    <section class="base-note" id="id-1">
+    <section class="base-note">
       <h3 class="sub-title">${this.subTitle}</h3>
       <div class="note-info">
         <h2 class="note-name">${this.noteName}</h2>
