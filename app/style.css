@@ -2,6 +2,31 @@ body {
   overflow-y: auto;
 }
 
+.add-notes {
+  position: fixed;
+  right: 5%;
+  bottom: 7%;
+
+  width: 20px;
+  height: 20px;
+
+  font-size: 4rem;
+  color: var(--call-clr);
+  
+  cursor: pointer;
+
+}
+
+.add-notes:hover {
+  filter: hue-rotate(20deg) brightness(1.3);
+}
+.add-icon {
+  transition: 300ms ease-in-out;
+}
+.add-icon.active {
+  transform: rotate(90deg);
+}
+
 .left-layout {
   display: flex;
 }
