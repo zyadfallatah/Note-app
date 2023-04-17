@@ -138,7 +138,7 @@ class BaseNoteCreation {
         isValid = false;
         textArea.style.border = "4px solid red";
       } else {
-        inputs[i].style.border = "4px solid var(--call-clr)";
+        textArea.style.border = "4px solid var(--call-clr)";
       }
 
       if (isValid) {
