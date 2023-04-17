@@ -1,13 +1,13 @@
 .base-note {
   font-size: 1.4rem;
-  border: 2px solid rgb(224, 224, 224);
+  border: 3px solid rgb(224, 224, 224);
 
   transition: border 100ms linear;
   cursor: pointer;
 }
 
 .base-note:hover {
-  border: 4px solid var(--call-clr);
+  border: 3px solid var(--call-clr);
 }
 
 .base-note .sub-title {
