@@ -29,6 +29,12 @@ class BaseNoteCreation {
     return container;
   };
 
+  getDate = function () {
+    const now = new Date();
+
+    return `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
+  };
+
   createBaseNoteCreationPage = function () {
     let cancel = document.createElement("input");
     cancel.id = "cancel";
@@ -140,7 +146,7 @@ class BaseNoteCreation {
     let note = new BaseNoteContent(
       noteName,
       subTitle,
-      "13/2/2020",
+      this.getDate(),
       textContent
     );
 
@@ -150,10 +156,10 @@ class BaseNoteCreation {
 
     document.querySelector("main").append(newElement);
 
-    // newElement.addEventListener("click", function () {
-    //   console.log(note.createBaseNoteContent());
-    //   document.body.append(note.createBaseNoteContent());
-    // });
+    newElement.addEventListener("click", function () {
+      console.log(note.createBaseNoteContent());
+      document.body.append(note.createBaseNoteContent());
+    });
   }
 
   cancelCreation = function () {
