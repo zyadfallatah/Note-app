@@ -156,6 +156,11 @@ class BaseNoteCreation {
 
     document.querySelector("main").append(newElement);
 
+    setTimeout(() => {
+      newElement.style.opacity = "1";
+      newElement.style.transform = "translateX(0%)";
+    }, 100);
+
     newElement.addEventListener("click", function () {
       console.log(note.createBaseNoteContent());
       document.body.append(note.createBaseNoteContent());

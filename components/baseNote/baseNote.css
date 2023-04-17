@@ -1,8 +1,11 @@
 .base-note {
+  opacity: 0;
   font-size: 1.4rem;
   border: 3px solid rgb(224, 224, 224);
 
+  transform: translateX(-200%);
   transition: border 100ms linear;
+  transition: transform 400ms ease-out;
   cursor: pointer;
 }
 
