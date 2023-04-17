@@ -1,3 +1,5 @@
+import BaseNoteContent from "../baseNoteContent/baseNoteContent.js";
+
 class BaseNoteCreation {
   static createContainer = function (noteInfoType, inputId, limitId, limit) {
     let input = document.createElement("input");
@@ -107,13 +109,61 @@ class BaseNoteCreation {
     return createBaseNote;
   };
 
+  getDataValidtion = function () {
+    let create = document.querySelector("#create");
+    let inputs = document.querySelectorAll(
+      `.create-base-note input[type="text"]`
+    );
+    let textArea = document.querySelector("textarea");
+
+    create.addEventListener("click", () => {
+      let isValid = true;
+
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "" || textArea.value === "") {
+          isValid = false;
+          break;
+        }
+      }
+
+      if (isValid) {
+        this.createNote(inputs[0].value, inputs[1].value, textArea.value);
+      }
+    });
+  };
+
   show = function () {
     document.querySelector(".create-base-note").style.transform = "scale(1)";
   };
-  // cancelCreation = function () {
-  //   let cancel = document.querySelector("#cancel");
 
-  // };
+  createNote(noteName, subTitle, textContent) {
+    let note = new BaseNoteContent(
+      noteName,
+      subTitle,
+      "13/2/2020",
+      textContent
+    );
+
+    document.querySelector(".create-base-note").remove();
+
+    let newElement = note.createBaseNote();
+
+    document.querySelector("main").append(newElement);
+
+    // newElement.addEventListener("click", function () {
+    //   console.log(note.createBaseNoteContent());
+    //   document.body.append(note.createBaseNoteContent());
+    // });
+  }
+
+  cancelCreation = function () {
+    let element = document.querySelector(".create-base-note");
+    let cancel = document.querySelector("#cancel");
+
+    cancel.addEventListener("click", () => {
+      element.remove();
+    });
+  };
 }
 
 export default BaseNoteCreation;

@@ -1,5 +1,5 @@
 .base-note-content {
-  opacity: 0;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +7,7 @@
   left: 50%;
   top: 5%;
 
-  transform: translateX(-200%);
+  transform: translateX(-50%);
   width: 95%;
   height: 90%;
 

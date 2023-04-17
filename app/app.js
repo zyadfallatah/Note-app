@@ -1,21 +1,17 @@
-import BaseNoteContent from "../components/baseNoteContent/baseNoteContent.js";
 import BaseNoteCreation from "../components/baseNoteCreate/baseNoteCreate.js";
 
 let createNote = new BaseNoteCreation();
-let myNote = new BaseNoteContent(
-  "first helloaaa9",
-  "today works",
-  "15/4/2023",
-  "Hi every one this is my first note"
-);
 
 let addNewNotes = document.querySelector(".add-notes");
+
 addNewNotes.addEventListener("click", () => {
   addNewNotes.children[0].classList.toggle("active");
 
   document.body.append(createNote.createBaseNoteCreationPage());
   setTimeout(() => {
     createNote.show();
+    createNote.getDataValidtion();
+    createNote.cancelCreation();
   }, 1);
 });
 
