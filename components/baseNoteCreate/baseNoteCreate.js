@@ -126,10 +126,17 @@ class BaseNoteCreation {
       let isValid = true;
 
       for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value === "" || textArea.value === "") {
+        if (inputs[i].value === "") {
           isValid = false;
-          break;
+          inputs[i].style.border = "4px solid red";
+        } else {
+          inputs[i].style.border = "4px solid var(--call-clr)";
         }
+      }
+
+      if (textArea.value === "") {
+        isValid = false;
+        textArea.style.border = "4px solid red";
       }
 
       if (isValid) {
@@ -162,7 +169,6 @@ class BaseNoteCreation {
     }, 100);
 
     newElement.addEventListener("click", function () {
-      console.log(note.createBaseNoteContent());
       document.body.append(note.createBaseNoteContent());
     });
   }

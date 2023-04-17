@@ -57,5 +57,5 @@
   border: 1px solid var(--main-clr);
 
   font-size: 3rem;
-  background-color: #83C5BE;
+  background-color: var(--main-white-clr);
 }

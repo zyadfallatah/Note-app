@@ -177,6 +177,7 @@ body {
 } */
 
 .right-layout main {
+  overflow: hidden;
   flex: 1;
 
   display: grid;
