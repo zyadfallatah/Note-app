@@ -1,5 +1,5 @@
 import BaseNoteCreation from "../components/baseNoteCreate/baseNoteCreate.js";
-let createNote = new BaseNoteCreation();
+const createNote = new BaseNoteCreation();
 
 for (let i = 0; i < 15; i++) {
   createNote.createNote(

@@ -1,6 +1,16 @@
 body {
   overflow-y: auto;
 }
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, var(--secondory-clr), var(--call-clr));
+  opacity: .5;
+}
 
 .add-notes {
   position: fixed;
@@ -193,5 +203,4 @@ body {
   padding: 1rem 2rem;
   align-content: flex-start;
 }
-
 /* Temp */
