@@ -14,11 +14,11 @@
 }
 
 .base-note .sub-title {
-  padding: 5rem 2rem 4rem;
-
+  padding: 2rem 2rem;
+  min-height: 200px;
   border-bottom: 1px solid var(--main-clr);
 
-  text-align: center;
+  text-align: left;
 
   font-size: 3rem;
 
