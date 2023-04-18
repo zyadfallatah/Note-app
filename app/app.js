@@ -10,7 +10,7 @@ addNewNotes.addEventListener("click", () => {
   document.body.append(createNote.createBaseNoteCreationPage());
   setTimeout(() => {
     createNote.show();
-    createNote.getDataValidtion();
+    createNote.createNoteValidtion();
     createNote.cancelCreation();
   }, 1);
 });

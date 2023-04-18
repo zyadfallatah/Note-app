@@ -4,6 +4,7 @@ class BaseNoteCreation {
   static createContainer = function (noteInfoType, inputId, limitId, limit) {
     let input = document.createElement("input");
     input.type = "text";
+    input.setAttribute("autocomplete", "off");
     input.id = inputId;
 
     let span = document.createElement("span");
@@ -33,6 +34,39 @@ class BaseNoteCreation {
     const now = new Date();
 
     return `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
+  };
+
+  inputLengthValidtion = function () {
+    const limits = document.querySelectorAll(".read-limit");
+
+    const textArea = document.querySelector("textarea");
+
+    limits.forEach((limit) => {
+      const ref = parseInt(limit.children[1].innerHTML);
+
+      let lastValue;
+      limit.children[0].addEventListener("keyup", function () {
+        if (limit.children[0].value.length <= ref) {
+          limit.children[0].style.border = "4px solid var(--call-clr)";
+          limit.children[1].innerHTML = ref;
+          limit.children[1].innerHTML -= limit.children[0].value.length;
+        }
+
+        if (limit.children[0].value.length === ref) {
+          lastValue = limit.children[0].value;
+        }
+
+        if (limit.children[0].value.length > ref) {
+          limit.children[0].style.border = "4px solid red";
+          limit.children[0].value = lastValue;
+        }
+      });
+    });
+
+    textArea.addEventListener(
+      "keyup",
+      () => (textArea.style.border = "4px solid var(--call-clr)")
+    );
   };
 
   createBaseNoteCreationPage = function () {
@@ -115,12 +149,14 @@ class BaseNoteCreation {
     return createBaseNote;
   };
 
-  getDataValidtion = function () {
+  createNoteValidtion = function () {
     let create = document.querySelector("#create");
     let inputs = document.querySelectorAll(
       `.create-base-note input[type="text"]`
     );
     let textArea = document.querySelector("textarea");
+
+    this.inputLengthValidtion();
 
     create.addEventListener("click", () => {
       let isValid = true;
