@@ -188,6 +188,9 @@ class BaseNoteCreation {
 
       if (isValid) {
         const idNote = `BN-${Math.round(Math.random() * 100000000)}`;
+
+        baseNotes = JSON.parse(localStorage.getItem("baseNotes"));
+
         baseNotes.push({
           ID: idNote,
           noteName: inputs[0].value,
