@@ -1,7 +1,5 @@
 const links = document.querySelectorAll("a");
 
-console.log("hello");
-
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();

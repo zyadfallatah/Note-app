@@ -1,12 +1,17 @@
 import BaseNoteCreation from "../components/baseNoteCreate/baseNoteCreate.js";
 const createNote = new BaseNoteCreation();
 
-for (let i = 0; i < 15; i++) {
-  createNote.createNote(
-    `Note Name ${i + 1}`,
-    `Sub Title ${i + 1}`,
-    `Text Content ${i + 1}`
-  );
+if (localStorage.getItem("baseNotes")) {
+  const baseNotes = JSON.parse(localStorage.getItem("baseNotes"));
+
+  baseNotes.forEach((note) => {
+    createNote.createNote(
+      note.noteName,
+      note.subTitle,
+      note.date,
+      note.textArea
+    );
+  });
 }
 
 let addNewNotes = document.querySelector(".add-notes");

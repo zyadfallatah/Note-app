@@ -1,6 +1,11 @@
 import BaseNoteContent from "../baseNoteContent/baseNoteContent.js";
 import NoteContext from "../noteContext/noteContext.js";
 
+let baseNotes;
+if (localStorage.getItem("baseNotes"))
+  baseNotes = JSON.parse(localStorage.getItem("baseNotes"));
+else baseNotes = [];
+
 class BaseNoteCreation {
   static createContainer = function (noteInfoType, inputId, limitId, limit) {
     let input = document.createElement("input");
@@ -179,7 +184,21 @@ class BaseNoteCreation {
       }
 
       if (isValid) {
-        this.createNote(inputs[0].value, inputs[1].value, textArea.value);
+        baseNotes.push({
+          noteName: inputs[0].value,
+          subTitle: inputs[1].value,
+          date: this.getDate(),
+          textArea: textArea.value,
+        });
+
+        localStorage.setItem("baseNotes", JSON.stringify(baseNotes));
+
+        this.createNote(
+          inputs[0].value,
+          inputs[1].value,
+          this.getDate(),
+          textArea.value
+        );
       }
     });
   };
@@ -188,13 +207,8 @@ class BaseNoteCreation {
     document.querySelector(".create-base-note").style.transform = "scale(1)";
   };
 
-  createNote(noteName, subTitle, textContent) {
-    let note = new BaseNoteContent(
-      noteName,
-      subTitle,
-      this.getDate(),
-      textContent
-    );
+  createNote(noteName, subTitle, date, textContent) {
+    let note = new BaseNoteContent(noteName, subTitle, date, textContent);
 
     if (document.querySelector(".create-base-note") !== null)
       document.querySelector(".create-base-note").remove();
