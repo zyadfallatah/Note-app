@@ -207,7 +207,12 @@ class BaseNoteCreation {
     }, 100);
 
     newElement.addEventListener("click", function () {
-      document.body.append(note.createBaseNoteContent());
+      const details = note.createBaseNoteContent();
+      document.addEventListener("keyup", function (e) {
+        if (e.key === "Escape") details.remove();
+      });
+
+      document.body.append(details);
     });
   }
 
