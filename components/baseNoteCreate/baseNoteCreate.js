@@ -1,5 +1,8 @@
 import BaseNoteContent from "../baseNoteContent/baseNoteContent.js";
 import NoteContext from "../noteContext/noteContext.js";
+import { existStyles } from "../../app/main.js";
+
+const main = document.querySelector("main");
 
 let baseNotes;
 if (localStorage.getItem("baseNotes"))
@@ -193,6 +196,10 @@ class BaseNoteCreation {
           textArea: textArea.value,
         });
 
+        if (baseNotes.length === 1) {
+          main.childNodes[0].remove();
+          main.style.cssText = existStyles;
+        }
         localStorage.setItem("baseNotes", JSON.stringify(baseNotes));
 
         this.createNote(

@@ -40,6 +40,7 @@ body {
 .left-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
+  min-height: 100vh;
 }
 
 .sidebar-nav {
@@ -178,20 +179,6 @@ body {
 }
 
 /* .right-layout main {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  align-content: flex-start;
-  font-size: 5rem;
-  flex: 1;
-
-  width: 100%;
-
-  gap: 4rem;
-  padding: 2rem;
-
-} */
-
-.right-layout main {
   overflow: hidden;
   flex: 1;
 
@@ -202,5 +189,13 @@ body {
   width: 100%;
   padding: 1rem 2rem;
   align-content: flex-start;
+} */
+
+.right-layout main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 5rem;
+  height: 100%;
+  flex: 1;
 }
-/* Temp */

@@ -1,3 +1,7 @@
+import { emptyStyles } from "../../app/main.js";
+
+const main = document.querySelector("main");
+
 class NoteContext {
   constructor(xAxis, yAxis) {
     this.x = xAxis - 64;
@@ -18,6 +22,12 @@ class NoteContext {
 
       this.remove();
       note.remove();
+
+      if (savedBaseNotes.length === 0) {
+        const nothingText = document.createTextNode("Nothing To Show Here");
+        main.append(nothingText);
+        main.style.cssText = emptyStyles;
+      }
     });
   };
 
