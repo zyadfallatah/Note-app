@@ -1,4 +1,5 @@
 import BaseNoteContent from "../baseNoteContent/baseNoteContent.js";
+import NoteContext from "../noteContext/noteContext.js";
 
 class BaseNoteCreation {
   static createContainer = function (noteInfoType, inputId, limitId, limit) {
@@ -205,6 +206,18 @@ class BaseNoteCreation {
       newElement.style.opacity = "1";
       newElement.style.transform = "translateX(0%)";
     }, 100);
+
+    newElement.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+
+      if (document.querySelector(".note-context") !== null)
+        document.querySelector(".note-context").remove();
+
+      const context = new NoteContext(e.clientX, e.clientY);
+      document.body.append(context.createNoteContext());
+
+      context.removeNote(newElement);
+    });
 
     newElement.addEventListener("click", function () {
       const details = note.createBaseNoteContent();

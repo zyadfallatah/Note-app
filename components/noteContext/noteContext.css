@@ -1,0 +1,19 @@
+.note-context {
+  position: absolute;
+  font-size: 1.75rem;
+  background-color: #eee;
+}
+
+.note-context p {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid #ddd;
+
+  transition: 100ms ease-in-out;
+}
+
+.note-context p:hover {
+  color: var(--main-white-clr);
+  background-color: #ED2939;
+  padding: 1rem 1.5rem;
+}
