@@ -119,7 +119,7 @@ class BaseNoteCreation {
         "Sub Title",
         "read-sub-title",
         "sub-title-limit",
-        "25"
+        "20"
       )
     );
 

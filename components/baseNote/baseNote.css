@@ -5,9 +5,9 @@
   border: 3px solid rgb(224, 224, 224);
 
   transform: translateX(-200%);
-  transition: border 100ms linear;
-  transition: transform 400ms ease-out;
+  transition: border 100ms linear, transform 400ms ease-out;
   cursor: pointer;
+  overflow-wrap: anywhere;
 }
 
 .base-note:hover {
@@ -15,12 +15,15 @@
 }
 
 .base-note .sub-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   padding: 2rem 2rem;
   min-height: 200px;
   border-bottom: 1px solid var(--main-clr);
 
-  text-align: left;
-
+  text-align: center;
   font-size: 3rem;
 
   color: var(--main-clr);

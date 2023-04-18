@@ -33,4 +33,9 @@ class NoteContext {
   };
 }
 
+document.addEventListener("click", function () {
+  const context = document.querySelector(".note-context");
+  context !== null ? context.remove() : "";
+});
+
 export default NoteContext;
