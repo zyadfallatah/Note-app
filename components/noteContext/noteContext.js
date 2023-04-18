@@ -8,6 +8,14 @@ class NoteContext {
     const deleteNote = document.querySelector(".delete");
 
     deleteNote.addEventListener("click", function () {
+      let savedBaseNotes = JSON.parse(localStorage.getItem("baseNotes"));
+
+      savedBaseNotes = savedBaseNotes.filter((savedNote) => {
+        return savedNote.ID !== note.id;
+      });
+
+      localStorage.setItem("baseNotes", JSON.stringify(savedBaseNotes));
+
       this.remove();
       note.remove();
     });
