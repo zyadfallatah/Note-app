@@ -28,10 +28,13 @@ body {
 }
 
 .left-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 260px 1fr;
 }
 
 .sidebar-nav {
+  position: fixed;
+  min-width: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,6 +90,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-left: auto;
 
   flex: 1;
 

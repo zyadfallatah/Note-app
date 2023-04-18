@@ -1,6 +1,13 @@
 import BaseNoteCreation from "../components/baseNoteCreate/baseNoteCreate.js";
-
 let createNote = new BaseNoteCreation();
+
+for (let i = 0; i < 15; i++) {
+  createNote.createNote(
+    `Note Name ${i + 1}`,
+    `Sub Title ${i + 1}`,
+    `Text Content ${i + 1}`
+  );
+}
 
 let addNewNotes = document.querySelector(".add-notes");
 

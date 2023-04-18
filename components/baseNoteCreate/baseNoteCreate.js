@@ -196,7 +196,8 @@ class BaseNoteCreation {
       textContent
     );
 
-    document.querySelector(".create-base-note").remove();
+    if (document.querySelector(".create-base-note") !== null)
+      document.querySelector(".create-base-note").remove();
 
     let newElement = note.createBaseNote();
 

@@ -26,9 +26,6 @@ class NoteContext {
     noteContext.style.top = `${this.y}px`;
     noteContext.append(deleteNote);
 
-    deleteNote.addEventListener("click", function () {
-      console.log(this);
-    });
     return noteContext;
   };
 }
