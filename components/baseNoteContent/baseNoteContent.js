@@ -1,8 +1,8 @@
 import BaseNote from "/components/baseNote/baseNote.js";
 
 class BaseNoteContent extends BaseNote {
-  constructor(noteName, subTitle, date, noteContent) {
-    super(noteName, subTitle, date);
+  constructor(ID, noteName, subTitle, date, noteContent) {
+    super(ID, noteName, subTitle, date);
     this.noteContent = noteContent;
   }
 

@@ -1,5 +1,6 @@
 class BaseNote {
-  constructor(noteName, subTitle, date) {
+  constructor(ID, noteName, subTitle, date) {
+    this.ID = ID;
     this.noteName = noteName;
     this.subTitle = subTitle;
     this.date = date;
@@ -28,23 +29,12 @@ class BaseNote {
 
     let baseNote = document.createElement("section");
     baseNote.className = "base-note";
+    baseNote.id = this.ID;
     baseNote.append(subTitle);
     baseNote.append(noteInfo);
 
     return baseNote;
   };
-
-  // createBaseNote = function () {
-  //   return `
-  //   <section class="base-note">
-  //     <h3 class="sub-title">${this.subTitle}</h3>
-  //     <div class="note-info">
-  //       <h2 class="note-name">${this.noteName}</h2>
-  //       <p class="date">${this.date}</p>
-  //     </div>
-  //   </section>
-  //   `;
-  // };
 }
 
 export default BaseNote;

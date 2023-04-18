@@ -6,6 +6,7 @@ if (localStorage.getItem("baseNotes")) {
 
   baseNotes.forEach((note) => {
     createNote.createNote(
+      note.ID,
       note.noteName,
       note.subTitle,
       note.date,

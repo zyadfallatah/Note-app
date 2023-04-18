@@ -184,7 +184,9 @@ class BaseNoteCreation {
       }
 
       if (isValid) {
+        const idNote = `BN-${Math.round(Math.random() * 100000000)}`;
         baseNotes.push({
+          ID: idNote,
           noteName: inputs[0].value,
           subTitle: inputs[1].value,
           date: this.getDate(),
@@ -194,6 +196,7 @@ class BaseNoteCreation {
         localStorage.setItem("baseNotes", JSON.stringify(baseNotes));
 
         this.createNote(
+          idNote,
           inputs[0].value,
           inputs[1].value,
           this.getDate(),
@@ -207,8 +210,8 @@ class BaseNoteCreation {
     document.querySelector(".create-base-note").style.transform = "scale(1)";
   };
 
-  createNote(noteName, subTitle, date, textContent) {
-    let note = new BaseNoteContent(noteName, subTitle, date, textContent);
+  createNote(ID, noteName, subTitle, date, textContent) {
+    let note = new BaseNoteContent(ID, noteName, subTitle, date, textContent);
 
     if (document.querySelector(".create-base-note") !== null)
       document.querySelector(".create-base-note").remove();
