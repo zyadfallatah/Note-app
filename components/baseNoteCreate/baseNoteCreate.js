@@ -5,9 +5,12 @@ import { existStyles } from "../../app/main.js";
 const main = document.querySelector("main");
 
 let baseNotes;
-if (localStorage.getItem("baseNotes"))
+if (localStorage.getItem("baseNotes")) {
   baseNotes = JSON.parse(localStorage.getItem("baseNotes"));
-else baseNotes = [];
+} else {
+  baseNotes = [];
+  localStorage.setItem("baseNotes", JSON.stringify(baseNotes));
+}
 
 class BaseNoteCreation {
   static createContainer = function (noteInfoType, inputId, limitId, limit) {
