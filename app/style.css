@@ -16,18 +16,22 @@ body * {
 }
 
 .add-notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: fixed;
-  right: 5%;
-  bottom: 7%;
-
-  width: 20px;
-  height: 20px;
-
-  font-size: 4rem;
+  right: 2%;
+  bottom: 2%;
+  
+  width: 65px;
+  height: 65px;
+  font-size: 3.7rem;
   color: var(--call-clr);
   
+  background-color: var(--fixed-white-clr);
   cursor: pointer;
-
+  border-radius: 50%;
 }
 
 .add-notes:hover {
@@ -181,18 +185,6 @@ body * {
   font-size: 1.9rem;
 }
 
-/* .right-layout main {
-  overflow: hidden;
-  flex: 1;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1rem;
-
-  width: 100%;
-  padding: 1rem 2rem;
-  align-content: flex-start;
-} */
 
 .right-layout main {
   display: flex;
