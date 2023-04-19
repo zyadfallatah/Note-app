@@ -10,10 +10,22 @@
 
 :root {
   /* CSS HEX */
-  --main-clr: #272838ff;
-  --secondory-clr: #e1b07eff;
-  --main-white-clr: #fafafa;
+  --main-clr: #fafafa;
+  --main-clr-two: #272838ff;
+  --bg-clr: #eee;
+  
+  --fixed-white-clr: #fafafa;
+  --fixed-dark-clr: #272838ff;
   --call-clr: #197278ff;
+  --secondory-clr: #e1b07eff;
+  
+  --saving-clr: #96c3d9;
+}
+
+.dark-mode {
+  --main-clr: #272838ff;
+  --main-clr-two: #f1f1f1;
+  --bg-clr: #96c3d9;
 }
 
 body {
@@ -35,5 +47,5 @@ img {
 
 a {
   font-family: 'Roboto', sans-serif;
-  color: var(--main-clr);
+  color: var(--fixed-dark-clr);
 }

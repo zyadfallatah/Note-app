@@ -13,7 +13,7 @@
 }
 
 .note-context p:hover {
-  color: var(--main-white-clr);
+  color: var(--fixed-white-clr);
   background-color: #ED2939;
   padding: 1rem 1.5rem;
 }

@@ -25,11 +25,11 @@
 .create-base-note .options {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--main-clr);
+  border-right: 1px solid var(--fixed-dark-clr);
   background-color: var(--secondory-clr);
 }
 .create-base-note .options .title {
-  color: var(--main-white-clr);
+  color: var(--fixed-white-clr);
   text-align: center;
   font-size: 3rem;
 }
@@ -40,7 +40,7 @@
   font-size: 1.5rem;
   flex: 1;
 
-  color: var(--main-white-clr);
+  color: var(--fixed-white-clr);
 }
 .create-base-note .options .confirm {
   display: grid;
@@ -59,16 +59,17 @@
   filter:brightness(1.05);
 }
 .create-base-note .options .confirm #cancel {
-  color: var(--main-clr);
+  color: var(--fixed-dark-clr);
   background-color: #e9e9e9;
 }
 .create-base-note .options .confirm #create {
-  color: var(--main-white-clr);
-  background-image: linear-gradient(180deg, var(--call-clr), var(--main-clr))
+  color: var(--fixed-white-clr);
+  background-image: linear-gradient(180deg, var(--call-clr), var(--fixed-dark-clr))
 }
 
 .create-base-note .reading-data {
-  background-color: var(--main-white-clr);
+  background-color: var(--main-clr);
+  color: var(--main-clr-two);
 }
 .create-base-note .reading-data .header-data {
   display: flex;
@@ -91,6 +92,9 @@
   width: 100%;
 
   font-size: 1.5rem;
+
+  color: var(--main-clr-two);
+  background-color: var(--bg-clr);
 }
 
 .create-base-note .reading-data .main-data {
@@ -107,4 +111,7 @@
   padding: 1rem 2rem;
 
   font-size: 2.5rem;
+
+  color: var(--main-clr-two);
+  background-color: var(--bg-clr);
 }

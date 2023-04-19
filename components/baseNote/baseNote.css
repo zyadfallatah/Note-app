@@ -21,12 +21,13 @@
   align-items: center;
   padding: 2rem 2rem;
   min-height: 200px;
-  border-bottom: 1px solid var(--main-clr);
+  border-bottom: 1px solid var(--fixed-dark-clr);
 
   text-align: center;
   font-size: 3rem;
 
-  color: var(--main-clr);
+  color: var(--main-clr-two);
+  background-color: var(--bg-clr);
 }
 
 .base-note .note-info {
@@ -63,12 +64,12 @@
 .base-note .note-info .note-name {
   font-size: 1.5rem;
 
-  color: var(--main-white-clr);
+  color: var(--fixed-white-clr);
   background-color: var(--call-clr);
-  border-right: 1px solid var(--main-clr);
+  border-right: 1px solid var(--fixed-dark-clr);
 }
 
 .base-note .note-info .date {
-  color: var(--main-white-clr);
-  background-color: var(--main-clr);
+  color: var(--fixed-white-clr);
+  background-color: var(--fixed-dark-clr);
 }

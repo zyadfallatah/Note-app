@@ -1,7 +1,24 @@
 import BaseNoteCreation from "../components/baseNoteCreate/baseNoteCreate.js";
 import { existStyles } from "./main.js";
 
+const lightDark = document.querySelector(".dark-light-mode");
+
+if (localStorage.getItem("darkMode") === "true") {
+  document.body.classList.add("dark-mode");
+}
+
+lightDark.addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
+
+  if (localStorage.getItem("darkMode") === "true") {
+    localStorage.setItem("darkMode", "false");
+  } else {
+    localStorage.setItem("darkMode", "true");
+  }
+});
+
 const createNote = new BaseNoteCreation();
+
 const main = document.querySelector("main");
 
 if (localStorage.getItem("baseNotes")) {
@@ -22,16 +39,6 @@ if (main.children.length !== 0) {
   main.childNodes[0].remove();
   main.style.cssText = existStyles;
 }
-
-// const mutation = new MutationObserver(() => {
-//   if (main.children.length === 0) {
-//     const nothingText = document.createTextNode("Nothing To Show Here");
-//     main.append(nothingText);
-//   } else {
-//     const nothingText = document.createTextNode("");
-//     main.append(nothingText);
-//   }
-// });
 
 let addNewNotes = document.querySelector(".add-notes");
 
