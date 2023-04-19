@@ -69,3 +69,13 @@
   opacity: .95;
   z-index: -1;
 }
+
+.base-note-content .note-content::after {
+  content: "Press Esc To Go Back";
+  position: absolute;
+
+  bottom: 2%;
+  right: 1%;
+
+  color: var(--main-clr-two);
+}
