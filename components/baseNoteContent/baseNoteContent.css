@@ -51,9 +51,21 @@
   flex: 1;
 
   width: 100%;
-  border: 1px solid var(--fixed-dark-clr);
+  border: 1px solid var(--main-clr-two);
 
   font-size: 3rem;
   color: var(--main-clr-two);
   background-color: var(--main-clr);
+}
+
+.base-note-content .note-content::before {
+  content: "";
+  position: fixed;
+  top: -7%;
+  left: -3%;
+  width: 106%;
+  height: 113%;
+  background-color: #607d8b;
+  opacity: .95;
+  z-index: -1;
 }
