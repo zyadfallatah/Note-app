@@ -14,8 +14,13 @@ align-content: flex-start;
 export const emptyStyles = `
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
 align-items: center;
 font-size: 5rem;
+width: 100%;
 height: 100%;
 flex: 1;
+
+background-color: var(--main-clr);
+color: var(--main-clr-two);
 `;

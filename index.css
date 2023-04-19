@@ -1,0 +1,61 @@
+body {
+  background-image: linear-gradient(180deg, var(--call-clr) 60%, var(--secondory-clr));
+}
+nav {
+  min-height: 8vh;
+}
+main.container {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  min-height: 92vh;
+
+  text-align: center;
+}
+
+.heading {
+  color: var(--fixed-white-clr);
+  
+}
+.heading .title { 
+  font-size: 6rem;
+}
+
+.heading .desc {
+  font-size: 3rem;
+  margin-block: 1rem;
+}
+
+.call-to-action {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  width: 100%;
+}
+.call-to-action button {
+  font-size: 2.6rem;
+  min-width: 230px;
+  border-radius: .55rem;
+  border: 0;
+}
+.call-to-action button a {
+  padding: 1.25rem 1.5rem;
+}
+.call-to-action .start {
+  color: var(--fixed-white-clr);
+  background-image: linear-gradient(to bottom, var(--call-clr), var(--main-clr-two));
+  filter: brightness(1.03);
+  border: 1px dashed var(--fixed-white-clr);
+
+}
+.call-to-action .start a {
+  color: var(--fixed-white-clr);
+}
+.call-to-action .explore {
+  background-color: #e7e7e7;
+}

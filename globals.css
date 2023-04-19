@@ -46,6 +46,7 @@ img {
 }
 
 a {
+  display: block;
   font-family: 'Roboto', sans-serif;
   color: var(--fixed-dark-clr);
 }
