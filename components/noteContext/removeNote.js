@@ -1,3 +1,7 @@
+import { emptyStyles } from "../../app/main.js";
+
+const main = document.querySelector("main");
+
 const removeNote = function (note, contextMenu) {
   const deleteNote = document.querySelector(".delete");
 

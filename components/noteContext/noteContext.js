@@ -1,35 +1,8 @@
-import { emptyStyles } from "../../app/main.js";
-
-const main = document.querySelector("main");
-
 class NoteContext {
   constructor(xAxis, yAxis) {
     this.x = xAxis - 64;
     this.y = yAxis - 33;
   }
-
-  removeNote = function (note) {
-    const deleteNote = document.querySelector(".delete");
-
-    deleteNote.addEventListener("click", function () {
-      let savedBaseNotes = JSON.parse(localStorage.getItem("baseNotes"));
-
-      savedBaseNotes = savedBaseNotes.filter((savedNote) => {
-        return savedNote.ID !== note.id;
-      });
-
-      localStorage.setItem("baseNotes", JSON.stringify(savedBaseNotes));
-
-      this.remove();
-      note.remove();
-
-      if (savedBaseNotes.length === 0) {
-        const nothingText = document.createTextNode("Nothing To Show Here");
-        main.append(nothingText);
-        main.style.cssText = emptyStyles;
-      }
-    });
-  };
 
   createNoteContext = function () {
     const deleteNote = document.createElement("p");
