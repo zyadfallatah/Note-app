@@ -1,13 +1,13 @@
 import { emptyStyles } from "../../app/main.js";
 
 const main = document.querySelector("main");
+const nothingText = document.createTextNode("Nothing To Show Here");
 
 const removeNote = function (note, contextMenu) {
   const deleteNote = document.querySelector(".delete");
 
-  deleteNote.addEventListener("click", function () {
+  deleteNote.onclick = function () {
     let savedBaseNotes = JSON.parse(localStorage.getItem("baseNotes"));
-
     savedBaseNotes = savedBaseNotes.filter((savedNote) => {
       return savedNote.ID !== note.id;
     });
@@ -18,11 +18,10 @@ const removeNote = function (note, contextMenu) {
     contextMenu.remove();
 
     if (savedBaseNotes.length === 0) {
-      const nothingText = document.createTextNode("Nothing To Show Here");
       main.append(nothingText);
       main.style.cssText = emptyStyles;
     }
-  });
+  };
 };
 
 export default removeNote;

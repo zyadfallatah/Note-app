@@ -1,3 +1,5 @@
+import options from "./options.js";
+
 class NoteContext {
   constructor(xAxis, yAxis) {
     this.x = xAxis - 64;
@@ -5,17 +7,12 @@ class NoteContext {
   }
 
   createNoteContext = function () {
-    const deleteNote = document.createElement("p");
-    deleteNote.classList.add("delete");
-
-    const deleteNoteText = document.createTextNode("Delete");
-    deleteNote.appendChild(deleteNoteText);
-
     const noteContext = document.createElement("div");
     noteContext.classList.add("note-context");
     noteContext.style.left = `${this.x}px`;
     noteContext.style.top = `${this.y}px`;
-    noteContext.append(deleteNote);
+
+    options.forEach((el) => noteContext.append(el));
 
     return noteContext;
   };
@@ -23,7 +20,10 @@ class NoteContext {
 
 document.addEventListener("click", function () {
   const context = document.querySelector(".note-context");
-  context !== null ? context.remove() : "";
+
+  if (context === null) return;
+
+  context.remove();
 });
 
 export default NoteContext;
