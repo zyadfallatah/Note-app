@@ -1,5 +1,6 @@
 import BaseNoteContent from "../baseNoteContent/baseNoteContent.js";
 import NoteContext from "../noteContext/noteContext.js";
+import removeNote from "../noteContext/removeNote.js";
 import { existStyles } from "../../app/main.js";
 
 const main = document.querySelector("main");
@@ -245,9 +246,10 @@ class BaseNoteCreation {
         document.querySelector(".note-context").remove();
 
       const context = new NoteContext(e.clientX, e.clientY);
-      document.body.append(context.createNoteContext());
+      const contextElement = context.createNoteContext();
+      document.body.append(contextElement);
 
-      context.removeNote(newElement);
+      removeNote(newElement, contextElement);
     });
 
     newElement.addEventListener("click", function () {
