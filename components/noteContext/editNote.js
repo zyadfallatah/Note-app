@@ -17,7 +17,8 @@ const edit = function (note) {
           savedNote.textArea
         );
         main.append(editNote.createBaseNoteEdit());
-        editNote.cancelEdit(note);
+        editNote.confirmEdit();
+        editNote.cancelEdit();
       }
     });
   };

@@ -1,5 +1,4 @@
 import BaseNote from "../baseNote/baseNote.js";
-import BaseNoteContent from "../baseNoteContent/baseNoteContent.js";
 
 export class BaseNoteEdit extends BaseNote {
   constructor(ID, noteName, subTitle, date, noteContent) {
@@ -61,6 +60,22 @@ export class BaseNoteEdit extends BaseNote {
     baseNoteContent.append(noteContent);
 
     return baseNoteContent;
+  };
+
+  confirmEdit = function () {
+    const confirm = document.querySelector(".note-content .confirm");
+    const oldText = document.querySelector(".note-content textarea").value;
+
+    if (confirm === null) return;
+
+    confirm.onclick = function () {
+      const updatedText = document.querySelector(".note-content textarea");
+
+      if (updatedText.value === oldText) {
+        updatedText.style.cssText = "--data-state: red;";
+        return;
+      } else updatedText.style.cssText = "--data-state: var(--call-clr);";
+    };
   };
 
   cancelEdit = function () {

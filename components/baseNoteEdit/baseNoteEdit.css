@@ -20,6 +20,8 @@
 }
 
 .base-note-content.edit textarea {
+  --data-state : var(--call-clr);
+
   display: block;
   width: 100%;
   min-height: 90%;
@@ -29,24 +31,24 @@
   color: var(--main-clr-two);
   font-size: 3rem;
   
-  border: 4px solid var(--call-clr);
-  animation: glow 1400ms infinite;
+  border: 4px solid var(--data-state);
+  animation: glow 3000ms infinite;
 }
 
 .base-note-content.edit textarea:focus {
-  border: 4px solid var(--call-clr);
   animation-play-state: paused;
+  border: 4px solid var(--data-state);
 }
 
 @keyframes glow {
   0% {
-    border: 4px solid var(--call-clr);
+    border: 4px solid var(--data-state);
   }
   50% {
     border: 4px solid transparent;
   }
   100% {
-    border: 4px solid var(--call-clr);
+    border: 4px solid var(--data-state);
   }
 }
 
