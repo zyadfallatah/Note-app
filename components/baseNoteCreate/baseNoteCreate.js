@@ -1,5 +1,6 @@
 import BaseNoteContent from "../baseNoteContent/baseNoteContent.js";
 import NoteContext from "../noteContext/noteContext.js";
+import editNote from "../noteContext/editNote.js";
 import removeNote from "../noteContext/removeNote.js";
 import { existStyles } from "../../app/main.js";
 
@@ -249,6 +250,7 @@ class BaseNoteCreation {
       const contextElement = context.createNoteContext();
       document.body.append(contextElement);
 
+      editNote(newElement, contextElement);
       removeNote(newElement, contextElement);
     });
 

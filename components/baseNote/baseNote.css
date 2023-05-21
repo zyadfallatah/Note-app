@@ -73,3 +73,15 @@
   color: var(--fixed-white-clr);
   background-color: var(--fixed-dark-clr);
 }
+
+/* Edit Mode */
+
+.base-note.edit {
+  transform: scale(1.1)  !important;
+  min-width: 50%;
+  z-index: 1000;
+}
+
+.base-note.edit .sub-title {
+  min-height: 30vh;
+}

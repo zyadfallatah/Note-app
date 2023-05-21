@@ -6,7 +6,40 @@ class BaseNoteContent extends BaseNote {
     this.noteContent = noteContent;
   }
 
-  createBaseNoteContent = function () {
+  noteContentType = function (editMode = false) {
+    let noteContent;
+
+    if (!editMode) {
+      noteContent = document.createElement("p");
+      noteContent.className = "note-content";
+      let noteContentText = document.createTextNode(this.noteContent);
+      noteContent.append(noteContentText);
+      return noteContent;
+    }
+
+    noteContent = document.createElement("p");
+    noteContent.className = "note-content";
+    noteContent.classList.add("edit");
+    const textArea = document.createElement("textarea");
+    textArea.style.resize = "none";
+    const textAreaOldContent = document.createTextNode(this.noteContent);
+    textArea.append(textAreaOldContent);
+    noteContent.appendChild(textArea);
+
+    const cancel = document.createElement("button");
+    cancel.classList.add("cancel");
+    cancel.append(document.createTextNode("cancel"));
+    noteContent.appendChild(cancel);
+
+    const confirm = document.createElement("button");
+    confirm.classList.add("confirm");
+    confirm.append(document.createTextNode("confirm"));
+    noteContent.appendChild(confirm);
+
+    return noteContent;
+  };
+
+  createBaseNoteContent = function (params = "") {
     let subTitle = document.createElement("h3");
     subTitle.className = "sub-title";
     let subTitleText = document.createTextNode(this.subTitle);
@@ -33,13 +66,15 @@ class BaseNoteContent extends BaseNote {
     noteInfo.append(noteName);
     noteInfo.append(subInfo);
 
-    let noteContent = document.createElement("p");
-    noteContent.className = "note-content";
-    let noteContentText = document.createTextNode(this.noteContent);
-    noteContent.append(noteContentText);
+    let noteContent = this.noteContentType();
+
+    if (params === "edit") noteContent = this.noteContentType(true);
 
     let baseNoteContent = document.createElement("div");
     baseNoteContent.className = "base-note-content";
+
+    if (params !== "") baseNoteContent.classList.add(params);
+
     baseNoteContent.append(noteInfo);
     baseNoteContent.append(noteContent);
 
