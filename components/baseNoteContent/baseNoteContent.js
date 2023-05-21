@@ -33,13 +33,14 @@ class BaseNoteContent extends BaseNote {
     noteInfo.append(noteName);
     noteInfo.append(subInfo);
 
-    let noteContent = document.createElement("p");
+    const noteContent = document.createElement("p");
     noteContent.className = "note-content";
     let noteContentText = document.createTextNode(this.noteContent);
     noteContent.append(noteContentText);
 
     let baseNoteContent = document.createElement("div");
     baseNoteContent.className = "base-note-content";
+
     baseNoteContent.append(noteInfo);
     baseNoteContent.append(noteContent);
 

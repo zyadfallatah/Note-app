@@ -1,4 +1,5 @@
 import BaseNoteCreation from "../components/baseNoteCreate/baseNoteCreate.js";
+import { BaseNoteEdit } from "../components/baseNoteEdit/baseNoteEdit.js";
 import { existStyles } from "./main.js";
 
 const lightDark = document.querySelector(".dark-light-mode");

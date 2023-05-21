@@ -1,6 +1,4 @@
-import { emptyStyles } from "../../app/main.js";
-
-const main = document.querySelector("main");
+import options from "./options.js";
 
 class NoteContext {
   constructor(xAxis, yAxis) {
@@ -8,41 +6,13 @@ class NoteContext {
     this.y = yAxis - 33;
   }
 
-  removeNote = function (note) {
-    const deleteNote = document.querySelector(".delete");
-
-    deleteNote.addEventListener("click", function () {
-      let savedBaseNotes = JSON.parse(localStorage.getItem("baseNotes"));
-
-      savedBaseNotes = savedBaseNotes.filter((savedNote) => {
-        return savedNote.ID !== note.id;
-      });
-
-      localStorage.setItem("baseNotes", JSON.stringify(savedBaseNotes));
-
-      this.remove();
-      note.remove();
-
-      if (savedBaseNotes.length === 0) {
-        const nothingText = document.createTextNode("Nothing To Show Here");
-        main.append(nothingText);
-        main.style.cssText = emptyStyles;
-      }
-    });
-  };
-
   createNoteContext = function () {
-    const deleteNote = document.createElement("p");
-    deleteNote.classList.add("delete");
-
-    const deleteNoteText = document.createTextNode("Delete");
-    deleteNote.appendChild(deleteNoteText);
-
     const noteContext = document.createElement("div");
     noteContext.classList.add("note-context");
     noteContext.style.left = `${this.x}px`;
     noteContext.style.top = `${this.y}px`;
-    noteContext.append(deleteNote);
+
+    options.forEach((el) => noteContext.append(el));
 
     return noteContext;
   };
@@ -50,7 +20,10 @@ class NoteContext {
 
 document.addEventListener("click", function () {
   const context = document.querySelector(".note-context");
-  context !== null ? context.remove() : "";
+
+  if (context === null) return;
+
+  context.remove();
 });
 
 export default NoteContext;

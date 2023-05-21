@@ -50,3 +50,8 @@ a {
   font-family: 'Roboto', sans-serif;
   color: var(--fixed-dark-clr);
 }
+
+button {
+  cursor: pointer;
+  border: 0;
+}

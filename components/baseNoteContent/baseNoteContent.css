@@ -12,7 +12,7 @@
   height: 90%;
 
   transition: 500ms;
-
+  z-index: 1000;
 }
 
 .base-note-content .note-info {
