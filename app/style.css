@@ -199,3 +199,15 @@ body * {
   background-color: var(--main-clr);
   color: var(--main-clr-two);
 }
+
+p.tooltip {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+
+  transform: translateX(-50%);
+
+  font-size: 2rem;
+
+  color: var(--main-clr-two);
+}
