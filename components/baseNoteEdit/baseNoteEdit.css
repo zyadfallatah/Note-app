@@ -23,10 +23,12 @@
   display: block;
   width: 100%;
   min-height: 90%;
-  border: 1px solid var(--call-clr) !important;
   padding: 2rem 1rem;
 
+  background-color: var(--main-clr);
+  color: var(--main-clr-two);
   font-size: 3rem;
+  
 }
 
 .base-note-content.edit button {
