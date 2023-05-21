@@ -250,7 +250,7 @@ class BaseNoteCreation {
       const contextElement = context.createNoteContext();
       document.body.append(contextElement);
 
-      editNote(newElement, contextElement);
+      editNote(newElement);
       removeNote(newElement, contextElement);
     });
 

@@ -1,4 +1,7 @@
 import BaseNote from "../baseNote/baseNote.js";
+import BaseNoteCreation from "../baseNoteCreate/baseNoteCreate.js";
+
+const main = document.querySelector("main");
 
 export class BaseNoteEdit extends BaseNote {
   constructor(ID, noteName, subTitle, date, noteContent) {
@@ -62,7 +65,10 @@ export class BaseNoteEdit extends BaseNote {
     return baseNoteContent;
   };
 
-  confirmEdit = function () {
+  confirmEdit = function (note) {
+    let savedNotes = JSON.parse(localStorage.getItem("baseNotes")) || [];
+
+    const reRender = new BaseNoteCreation();
     const confirm = document.querySelector(".note-content .confirm");
     const oldText = document.querySelector(".note-content textarea").value;
 
@@ -75,6 +81,29 @@ export class BaseNoteEdit extends BaseNote {
         updatedText.style.cssText = "--data-state: red;";
         return;
       } else updatedText.style.cssText = "--data-state: var(--call-clr);";
+
+      savedNotes.forEach((savedNote) => {
+        if (savedNote.ID === note.id) {
+          savedNote.textArea = updatedText.value;
+          savedNote.date = reRender.getDate();
+        }
+      });
+
+      localStorage.setItem("baseNotes", JSON.stringify(savedNotes));
+
+      updatedText.parentElement.parentElement.remove();
+
+      main.innerHTML = "";
+
+      savedNotes.forEach((savedNote) =>
+        reRender.createNote(
+          savedNote.ID,
+          savedNote.noteName,
+          savedNote.subTitle,
+          savedNote.date,
+          savedNote.textArea
+        )
+      );
     };
   };
 
