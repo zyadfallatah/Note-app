@@ -29,6 +29,25 @@
   color: var(--main-clr-two);
   font-size: 3rem;
   
+  border: 4px solid var(--call-clr);
+  animation: glow 1400ms infinite;
+}
+
+.base-note-content.edit textarea:focus {
+  border: 4px solid var(--call-clr);
+  animation-play-state: paused;
+}
+
+@keyframes glow {
+  0% {
+    border: 4px solid var(--call-clr);
+  }
+  50% {
+    border: 4px solid transparent;
+  }
+  100% {
+    border: 4px solid var(--call-clr);
+  }
 }
 
 .base-note-content.edit button {
